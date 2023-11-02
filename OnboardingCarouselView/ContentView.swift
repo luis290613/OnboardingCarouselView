@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hola mundoooo :v")
+        TabView {
+            ForEach(features) { item in
+                OnboardingContentView(feature: item)
+            }
         }
-        .padding()
+        .tabViewStyle(.page)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -24,3 +24,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
